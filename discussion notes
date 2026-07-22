@@ -1,5 +1,8 @@
 discussion notes of sidemeeting
+3 presentations were introduced:
 
+
+---Q and A---
 1. [Question] -- about the Motivation and Objective Measurements (Presentation 1)
 what is the basis for the assertion that traditional network architectures can no longer meet the demands for agent-network collaboration? Are there specific metrics or objective measurements from current networks that show these issues?
 [Answer] --It was explained that the Agent Policy Aware Network (APAN) is designed to measure policies and resources for data transfer based on agent modeling and context. It aims to differentiate agent workflows across domains with varying bandwidth, latency, or computing resources. The draft will be updated with relevant metrics and measurements for reference. It is noted that standardizing Task IDs and SLA tags to be carried throughout the entire task lifecycle (even when packets are regenerated) ensures consistent end-to-end service level assurance.
