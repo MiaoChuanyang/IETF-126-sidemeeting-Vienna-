@@ -1,2 +1,29 @@
 discussion notes of sidemeeting
-  
+
+1.[Question] -- about the Motivation and Objective Measurements (Presentation 1)
+what is the basis for the assertion that traditional network architectures can no longer meet the demands for agent-network collaboration? Are there specific metrics or objective measurements from current networks that show these issues?
+[Answer] --It was explained that the Agent Policy Aware Network (APAN) is designed to measure policies and resources for data transfer based on agent modeling and context. It aims to differentiate agent workflows across domains with varying bandwidth, latency, or computing resources. The draft will be updated with relevant metrics and measurements for reference. It is noted that standardizing Task IDs and SLA tags to be carried throughout the entire task lifecycle (even when packets are regenerated) ensures consistent end-to-end service level assurance.
+
+2. [Question] -- Network Impact vs. Agent Non-Determinism (Presentation 2)
+Given that agent execution time is often highly non-deterministic, is the impact of network traffic truly dominant? What is the relationship between workload execution time and network execution time in these scenarios?
+[Answer] -- The scenarios in presentation 2 assume a chain of agents where workloads are estimated to be relatively deterministic within specific time constraints. The system can either choose a pre-implemented "candidate chain" or dynamically orchestrate a new one using a network controller to apply appropriate computing resources and path orchestration. If a task cannot be properly orchestrated within the required parameters, it may be abandoned.
+
+3. [Question] -- Standardization and SDO Progress
+How is this work planned to progress within the IETF or other Standards Development Organizations (SDOs)?
+[Answer] -- It is clarified that the current work are identifying key issues to standardize within the IETF, such as the Hybrid Function Chaining (HFC) and the task segementation that is currently studying in Computing-Aware Traffic Steering (CATS). For high-level functional architecture or requirements, they may be considerd to be worked in 3GPP or ITU-T, but the core network protocol extensions will be handled within the IETF.
+
+4. [Question] -- Protocol for ID Delivery
+What kind of protocol is being considered for delivering the HFC ID?
+[Answer] -- It was stated that the HFC ID is currently under development. They are exploring extending protocols within the CATS group. The current focus is on frameworks and metrics; once those are settled, they will move to specific solutions and determine if existing protocols can be used or if new ones are required. 
+
+5. [Question] -- Application Compliance vs. Network Enforcement (Presentation 3)
+While the network can use Service Function Chaining (SFC) to decide a path, how does the network layer actually recognize whether an application-level compliance check (e.g., identity verification or fraud check) has succeeded or failed?
+[Answer] -- It was explained that the workflow relies on trusting designated "compliance checkpoints." The network’s role is to ensure that traffic is physically steered through these trustworthy points, regardless of the application's internal status. The presenter further clarified that this involves two levels: the top-level orchestrator handles the application logic (success/failure), while the network layer (SFC) ensures the data cannot bypass required security nodes (like a mandatory checkpoint) before reaching its destination.
+
+6. [Question] -- Bridging Protocol and Application Security
+There seems to be a gap between protocol-level mechanisms (like SRv6) and application-level security (like banking transfers). How are these two different layers linked?
+[Answer] -- The presentor agreed that these are two different types of requirements (networking vs. application). Their goal is to identify "binding points" where coordination can occur between the layers. They are currently researching how mechanisms like Security VPN and BBFC can coordinate with these network paths.
+
+7. [Question] -- Recognition of Application "Marks" by Network Nodes
+How does a network node recognize a "mark" or application-specific information to understand the status of a flow?
+[Answer] -- The presentor mentioned they are researching extensions to IPv6 headers. Another possibility being explored is using specific identifications within the IP address space, such as utilizing multicast IP addresses to represent specific application properties.
